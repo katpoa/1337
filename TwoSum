@@ -1,0 +1,24 @@
+# Python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash = {};
+        for i in range(len(nums)):
+            if target - nums[i] in hash and i != hash[target - nums[i]]:
+                return [i, hash[target - nums[i]]]
+            hash[nums[i]] = i
+            
+// Javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    for (i = 0; i < nums.length; i++) {
+        for (j = i + 1; j < nums.length; j++) {
+            if (nums[j] == target - nums[i]) {
+                return [i, j];
+            }
+        }
+    }
+};
