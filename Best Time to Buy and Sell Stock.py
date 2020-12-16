@@ -18,3 +18,17 @@ class Solution:
             elif prices[i] - buy > maxprof:
                 maxprof = prices[i] - buy
         return maxprof
+
+    // Javascript
+var maxProfit = function(prices) {
+    let minBuy = prices[0];
+    let maxProf = 0;
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] < minBuy) {
+            minBuy = prices[i];
+        } else if (prices[i] - minBuy > maxProf) {
+            maxProf = prices[i] - minBuy;
+        }
+    }
+    return maxProf;
+};
