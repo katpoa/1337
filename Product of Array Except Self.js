@@ -34,3 +34,33 @@ class Solution:
         for i in range(length):
             products[i] = L[i] * R[i]
         return products
+
+// constant space
+
+const productExceptSelf = function(nums) {
+    let products = [];
+    products[0] = 1;
+    for (let i = 1; i < nums.length; i++) {
+        products[i] = nums[i - 1] * products[i - 1];
+    }
+    let right = 1;
+    for (let j = nums.length - 1; j >= 0; j--) {
+        products[j] = products[j] * right;
+        right *= nums[j];
+    }
+    return products;
+};
+
+# constant space
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        length = len(nums)
+        products = [0] * length
+        products[0] = 1
+        for i in range(1, length):
+            products[i] = products[i - 1] * nums[i - 1]
+        right = 1
+        for i in reversed(range(length)):
+            products[i] = products[i] * right
+            right *= nums[i]
+        return products
