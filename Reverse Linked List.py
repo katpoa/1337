@@ -12,9 +12,6 @@
 var reverseList = function(head) {
     let prev = null;
     let curr = head;
-    if (!curr) {
-        return curr;
-    }
     while (curr) {
         let nextTemp = curr.next;
         curr.next = prev;
