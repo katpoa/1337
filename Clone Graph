@@ -1,0 +1,50 @@
+/**
+ * // Definition for a Node.
+ * function Node(val, neighbors) {
+ *    this.val = val === undefined ? 0 : val;
+ *    this.neighbors = neighbors === undefined ? [] : neighbors;
+ * };
+ */
+
+/**
+ * @param {Node} node
+ * @return {Node}
+ */
+var cloneGraph = function(node) {
+// stop case - val is back to the original val?
+    // recursively push neighbors into cloned graph for each node
+    let copy = {};
+    var clone = function(node) {
+        if (!node) {
+            return node;
+        }
+        if (!copy[node.val]) {
+            copy[node.val] = new Node(node.val);
+            copy[node.val].neighbors = node.neighbors.map(clone);
+        }
+        return copy[node.val];
+    };
+    return clone(node);
+};
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+"""
+
+class Solution:
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        copy = {}
+        def clone(node):
+            if not node:
+                return node
+            if node.val not in copy:
+                current = copy[node.val] =  Node(node.val, None)
+                current.neighbors = [*map(clone, node.neighbors)]
+            return copy[node.val]
+        return clone(node)
+
+        
