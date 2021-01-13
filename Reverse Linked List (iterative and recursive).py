@@ -21,6 +21,18 @@ var reverseList = function(head) {
     return prev;
 };
 
+// recursive
+
+var reverseList = function(head) {
+    const helper = (curr, prev) => {
+        if (curr === null) { return prev; }
+        let next = curr.next;
+        curr.next = prev;
+        return helper(next, curr)
+    }
+    return helper(head, null);
+};
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -37,3 +49,14 @@ class Solution:
             curr = tmp
         return prev
         
+# recursive
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        return self.helper(head, None)
+    
+    def helper(self, curr, prev):
+        if not curr:
+            return prev
+        next = curr.next
+        curr.next = prev
+        return self.helper(next, curr)
