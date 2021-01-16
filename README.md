@@ -11,7 +11,7 @@
 - [x] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 - [x] [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 - [x] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- [ ] [3Sum](https://leetcode.com/problems/3sum/)
+- [x] [3Sum](https://leetcode.com/problems/3sum/)
 - [ ] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 ---
@@ -67,7 +67,7 @@
 
 ## Linked List
 
-- [ ] [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [x] [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
 - [ ] [Detect Cycle in a Linked List](https://leetcode.com/problems/linked-list-cycle/)
 - [ ] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [ ] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
