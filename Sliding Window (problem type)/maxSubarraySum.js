@@ -1,3 +1,6 @@
+// Write a function which accepts an array of integers and a number n
+// the function should calculate the maximum sum of n consecutive elements in the array
+
 function maxSubarraySum(arr, num) {
   // sliding windoow
   if (num > arr.length) {
