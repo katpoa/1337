@@ -1,3 +1,5 @@
+// Javascript
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -11,18 +13,29 @@
  */
 var reverseList = function(head) {
     let prev = null;
-    let curr = head;
-    while (curr) {
-        let nextTemp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = nextTemp;
+    let next = null;
+    while (head != null) {
+        let next = head.next;
+        head.next = prev;
+        prev = head;
+        head = next;
+        // reverseList(head.next);
     }
     return prev;
-};
+}
 
 // recursive
-
+var reverseList = function(head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+    let reversed = reverseList(head.next);
+    head.next.next = head;
+    head.next = null;
+    return reversed;
+    
+};
+// OR
 var reverseList = function(head) {
     const helper = (curr, prev) => {
         if (curr === null) { return prev; }
@@ -33,6 +46,8 @@ var reverseList = function(head) {
     return helper(head, null);
 };
 
+
+# Python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
