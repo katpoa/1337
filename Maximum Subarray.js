@@ -2,9 +2,12 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubarraySum = (nums) => {
-  let maxSum = 0;
+var maxSubArray = (nums) => {
+  let maxSum = nums[0];
   let currSum = 0;
+  if (nums.length === 1) {
+      return nums[0];
+  }
   for (let i = 0; i < nums.length; i++) {
     if (currSum < 0) {
       currSum = 0;
@@ -13,7 +16,7 @@ var maxSubarraySum = (nums) => {
     maxSum = Math.max(maxSum, currSum);
   }
   return maxSum;
-};
+ };
 //     O(n**2) time solution
 //     let maxSum;
 //     for (let i = 0; i < nums.length; i++) {
