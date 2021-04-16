@@ -20,17 +20,21 @@ class Solution:
         return maxprof
 
     // Javascript
-var maxProfit = function(prices) {
-    let minBuy = prices[0];
-    let maxProf = 0;
-    for (let i = 1; i < prices.length; i++) {
-        if (prices[i] < minBuy) {
-            minBuy = prices[i];
-        } else if (prices[i] - minBuy > maxProf) {
-            maxProf = prices[i] - minBuy;
-        }
+var maxProfit = (prices) => {
+  // track a minBuy price
+  let minBuy = prices[0];
+  let maxProf = 0;
+  // loop through prices
+  for (let i = 1; i < prices.length; i++) {
+  //   if current is > minBuy, update
+    if (prices[i] < minBuy) {
+      minBuy = prices[i];
+    } else if ((prices[i] - minBuy) > maxProf) {
+  //   if current - minBuy is more than maxProf, update
+      maxProf = prices[i] - minBuy;
     }
-    return maxProf;
+  }
+  return maxProf;
 };
 
 // Example 1:
