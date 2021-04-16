@@ -2,19 +2,18 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubArray = function(nums) {
-    let maxSum = nums[0];
-    let currSum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (currSum < 0) {
-            currSum = 0;
-        }
-        currSum += nums[i];
-        if (currSum > maxSum) {
-            maxSum = currSum;
-        }
+var maxSubarraySum = (nums) => {
+  let maxSum = 0;
+  let currSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (currSum < 0) {
+      currSum = 0;
     }
-    return maxSum;
+    currSum += nums[i];
+    maxSum = Math.max(maxSum, currSum);
+  }
+  return maxSum;
+};
 //     O(n**2) time solution
 //     let maxSum;
 //     for (let i = 0; i < nums.length; i++) {
@@ -27,7 +26,6 @@ var maxSubArray = function(nums) {
 //         }
 //     }
 //     return maxSum;
-};
 
 # python solution
 class Solution:
