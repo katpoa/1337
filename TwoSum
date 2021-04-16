@@ -25,3 +25,18 @@ var twoSum = function(nums, target) {
         }
     }
 };
+
+var twoSum = (nums, target) => {
+  // create obj
+  var obj = {};
+  // loop through nums
+  for (let i = 0; i < nums.length; i++) {
+  // if target - current is in obj, return the indices of the two numbers!
+    let complement = target - nums[i];
+    if (complement in obj) {
+      return [i, obj[complement]];
+    }
+    // otherwise add current to obj
+    obj[nums[i]] = i;
+  }
+};
